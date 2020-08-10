@@ -1,33 +1,54 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/time.h>
 
-#include <imageprocessing.h>
-
+#include "imageprocessing.h"
+#define N 7
 
 int main() {
-  imagem img;
-  img = abrir_imagem("data/cachorro.jpg");
-  unsigned int tmp;
+  imagem img, novaImg;
+  img = abrir_imagem("./data/cachorro.jpg");
+  novaImg = abrir_imagem("./data/cachorro.jpg");
+
+  unsigned int somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
   float alpha = 0.998;
+  struct timeval start, stop;
+  double secs = 0;
 
+  //Daqui em diante é a forma linear de fazer, sem processamento paralelo
+  gettimeofday(&start, NULL);
   for (int i=0; i<(img.width); i++) {
     for (int j=0; j<(img.height); j++) {
-      /* Ganho no canal R */
-      tmp = img.r[j*img.width + i] * 2;
-      if (tmp > 255) tmp=255;
-      img.r[j*img.width + i] = tmp;
+        //Blur normal no canal R
+        for(int l = j - N; l < j + N; l++){
+            if(l>=0 && l < img.height){
+                for (int k = i - N; k < i + N; k++){
+                    if (k >= 0 && k < img.width){
+                        somaR = somaR + img.r[l * img.width + k];
+                        somaG = somaG + img.g[l * img.width + k];
+                        somaB = somaB + img.b[l * img.width + k];
+                        quant++;
+                    }
+                }
+            }
+        }
+        novaImg.r[j * img.width + i] = somaR / quant;
+        novaImg.g[j * img.width + i] = somaG / quant;
+        novaImg.b[j * img.width + i] = somaB / quant;
 
-      /* Reducao no canal B */
-      img.b[j*img.width + i] /= 2;
-
-      /* Blur exponencial no canal G */
-      if (i!=0) {
-        img.g[j*img.width + i] = (1-alpha)*img.g[j*img.width + i] +(alpha)* img.g[j*img.width + i -1];
-      }
+        somaR = 0;
+        somaG = 0;
+        somaB = 0;
+        quant = 0;
 
     }
   }
+  gettimeofday(&stop, NULL);
+  secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
+  printf("time taken %f\n", secs);
 
-  salvar_imagem("cachorro-out.jpg", &img);
-  liberar_imagem(&img);
+  salvar_imagem("cachorro-out.jpg", &novaImg);
+  liberar_imagem(&novaImg);
   return 0;
 }
