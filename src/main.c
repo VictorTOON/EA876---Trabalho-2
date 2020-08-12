@@ -10,7 +10,7 @@ int main() {
   img = abrir_imagem("./data/cachorro.jpg");
   novaImg = abrir_imagem("./data/cachorro.jpg");
 
-  unsigned int somaR = 0, somaG = 0, somaB = 0, quant = 0;
+  float somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
   float alpha = 0.998;
   struct timeval start, stop;
@@ -46,9 +46,9 @@ int main() {
   }
   gettimeofday(&stop, NULL);
   secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
-  printf("time taken %f\n", secs);
+  printf("time taken linear: %f\n", secs);
 
-  salvar_imagem("cachorro-out.jpg", &novaImg);
+  salvar_imagem("cachorro-out-linear.jpg", &novaImg);
   liberar_imagem(&novaImg);
   return 0;
 }
