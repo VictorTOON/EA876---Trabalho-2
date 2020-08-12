@@ -7,7 +7,7 @@
 #include <string.h>
 
 #include "imageprocessing.h"
-#define N 5
+#define N 3
 
 void *funcao_thread1(void *count);
 imagem img;
