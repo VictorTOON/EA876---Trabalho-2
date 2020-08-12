@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 
 #include "imageprocessing.h"
-#define N 3
+#define N 5
 
 int main(){
     int protection = PROT_READ | PROT_WRITE;

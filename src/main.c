@@ -3,7 +3,7 @@
 #include <sys/time.h>
 
 #include "imageprocessing.h"
-#define N 3
+#define N 5
 
 int main() {
   imagem img, novaImg;
