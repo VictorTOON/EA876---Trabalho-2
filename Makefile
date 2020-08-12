@@ -6,3 +6,5 @@ main: src/main2.c src/main.c src/main3.c
 	./main
 	gcc -omain src/main3.c src/imageprocessing.c -I./ -lfreeimage
 	./main
+clean:
+	rm main
