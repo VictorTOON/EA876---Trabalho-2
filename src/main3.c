@@ -6,6 +6,7 @@
 #include <string.h>
 #include <sys/mman.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 #include "imageprocessing.h"
 #define N 7
