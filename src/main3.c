@@ -33,7 +33,6 @@ int main(){
     pid_t p1, p2, p3;
     p1 = fork();
     if (p1 == 0){
-        //printf("Entrei processo 1\n");
         for (int i = 0; i < (img.width); i++){
             for (int j = 0; j < (img.height); j++){
                 //Blur normal no canal R
@@ -52,7 +51,6 @@ int main(){
                 quant = 0;
             }
         }
-        //printf("Sai processo 1\n");
         exit(0);
     }
     p2 = fork();
