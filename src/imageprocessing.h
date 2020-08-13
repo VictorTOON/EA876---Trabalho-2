@@ -4,7 +4,7 @@
 
 
 typedef struct {
-  unsigned int width, height;
+  int width, height;
   float *r, *g, *b;
 } imagem;
 

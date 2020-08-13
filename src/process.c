@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 
 #include "imageprocessing.h"
-#define N 3
+#define N 5
 
 int main(){
     int protection = PROT_READ | PROT_WRITE;
@@ -106,12 +106,11 @@ int main(){
     waitpid(p2, NULL, 0);
     waitpid(p3, NULL, 0);
 
-    gettimeofday(&stop, NULL);
-
     memcpy(img.r, matriz1, sizeof(float) * img.height * img.width);
     memcpy(img.g, matriz2, sizeof(float) * img.height * img.width);
     memcpy(img.b, matriz3, sizeof(float) * img.height * img.width);
 
+    gettimeofday(&stop, NULL);
 
     secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
     printf("time taken multi process: %f\n", secs);
