@@ -1,4 +1,4 @@
 for i in {1..20}; 
-	do (./main-l ; ./main-t ; ./main-p) | grep taken ; 
+	do (./build/linear.o ; ./build/thread.o ; ./build/process.o) | grep taken ; 
 done;
 
