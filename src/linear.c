@@ -7,8 +7,8 @@
 
 int main() {
   imagem img, novaImg;
-  img = abrir_imagem("./data/cachorro.jpg");
-  novaImg = abrir_imagem("./data/cachorro.jpg");
+  img = abrir_imagem("./data/onepiece.jpg");
+  novaImg = abrir_imagem("./data/onepiece.jpg");
 
   float somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
