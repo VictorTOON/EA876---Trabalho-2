@@ -3,12 +3,12 @@
 #include <sys/time.h>
 
 #include "imageprocessing.h"
-#define N 5
+#define N 3
 
 int main() {
   imagem img, novaImg;
-  img = abrir_imagem("./data/onepiece.jpg");
-  novaImg = abrir_imagem("./data/onepiece.jpg");
+  img = abrir_imagem("./data/cachorro.jpg");
+  novaImg = abrir_imagem("./data/cachorro.jpg");
 
   float somaR = 0, somaG = 0, somaB = 0, quant = 0;
 

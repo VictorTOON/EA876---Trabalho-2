@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 
 #include "imageprocessing.h"
-#define N 5
+#define N 3
 
 int main(){
     int protection = PROT_READ | PROT_WRITE;
@@ -17,7 +17,7 @@ int main(){
 
     /* Criar area de memoria compartilhada */
     imagem img;
-    img = abrir_imagem("./data/onepiece.jpg");
+    img = abrir_imagem("./data/cachorro.jpg");
     float *matriz1 = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
     float *matriz2 = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
     float *matriz3 = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
