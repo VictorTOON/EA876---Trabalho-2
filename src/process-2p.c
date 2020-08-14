@@ -25,7 +25,6 @@ int main(int argc, char *argv[]){
 
     float *matriz_r = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
     float *matriz_g = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
-    float *matriz_b = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
 
     unsigned int somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
@@ -34,33 +33,25 @@ int main(int argc, char *argv[]){
 
     //Daqui em diante é a forma multithread
     gettimeofday(&start, NULL);
-    pid_t p1,p2,p3;
+    pid_t p1,p2;
     p1 = fork();
-    p2 = fork();
-    p3 = fork();
     if (p1 == 0){
 	processaMatriz(img.r, matriz_r ,img.width, img.height);
         exit(0);
     }
+    p2 = fork();
     if (p2 == 0){
 	processaMatriz(img.g, matriz_g,img.width, img.height);
         exit(0);
     }
-    if (p3 == 0){
-	processaMatriz(img.b, matriz_b, img.width, img.height);
-        exit(0);
-    }
-
     waitpid(p1, NULL, 0);
     waitpid(p2, NULL, 0);
-    waitpid(p3, NULL, 0);
-
 
     gettimeofday(&stop, NULL);
     
+    
     img.r = matriz_r;
     img.g = matriz_g;
-    img.b = matriz_b;
 
     secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
     printf("time taken multi process: %f\n", secs);
@@ -73,10 +64,8 @@ int main(int argc, char *argv[]){
 
     munmap(img.r, sizeof(float) * img.height * img.width);
     munmap(img.g, sizeof(float) * img.height * img.width);
-    munmap(img.b, sizeof(float) * img.height * img.width);
     img.r = NULL;
     img.g = NULL;
-    img.b = NULL;
 
     liberar_imagem(&img);
     return 0;
