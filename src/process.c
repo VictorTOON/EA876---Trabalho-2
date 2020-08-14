@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
 void processaMatriz(float* baseMatrix ,int width, int height){
 
         float *matriz = malloc(sizeof(float) * width * height) ;
-        memcpy(matriz, baseMatriz,  sizeof(float) * height * width);
+        memcpy(matriz, baseMatrix,  sizeof(float) * height * width);
 		
 	int soma = 0, quant = 0;
 	for (int i = 0; i < (width); i++){
