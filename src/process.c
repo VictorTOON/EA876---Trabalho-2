@@ -32,26 +32,14 @@ int main(int argc, char *argv[]){
 
     //Daqui em diante é a forma multithread
     gettimeofday(&start, NULL);
-    pid_t p1, p2, p3;
+    pid_t p1;
     p1 = fork();
     if (p1 == 0){
 	processaMatriz(img.r, img.width, img.height);
         exit(0);
     }
-    p2 = fork();
-    if (p2 == 0){
-	processaMatriz(img.g, img.width, img.height);
-        exit(0);
-    }
-    p3 = fork();
-    if (p3 == 0){
-	processaMatriz(img.b, img.width, img.height);
-        exit(0);
-    }
 
     waitpid(p1, NULL, 0);
-    waitpid(p2, NULL, 0);
-    waitpid(p3, NULL, 0);
 
 
     gettimeofday(&stop, NULL);
@@ -71,6 +59,7 @@ int main(int argc, char *argv[]){
 void processaMatriz(float* baseMatrix ,int width, int height){
 
         float *matriz = malloc(sizeof(float) * width * height) ;
+        memcpy(matriz, baseMatriz,  sizeof(float) * height * width);
 		
 	int soma = 0, quant = 0;
 	for (int i = 0; i < (width); i++){
@@ -90,5 +79,4 @@ void processaMatriz(float* baseMatrix ,int width, int height){
 		quant = 0;
 	    }
 	}
-        memcpy(baseMatrix, matriz, sizeof(float) * height * width);
 }

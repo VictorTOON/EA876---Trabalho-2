@@ -22,22 +22,14 @@ int main(int argc, char *argv[]){
 
     //Daqui em diante é a forma multithread
     gettimeofday(&start, NULL);
-    pthread_t p1, p2, p3;
+    pthread_t p1;
 
     void *arg1 = malloc(sizeof(float *));
-    void *arg2 = malloc(sizeof(float *));
-    void *arg3 = malloc(sizeof(float *));
     (arg1) = img.r;
-    (arg2) = img.g;
-    (arg3) = img.b;
 
     pthread_create(&(p1), NULL, funcao_thread1, arg1);
-    pthread_create(&(p2), NULL, funcao_thread1, arg2);
-    pthread_create(&(p3), NULL, funcao_thread1, arg3);
 
     pthread_join(p1, NULL);
-    pthread_join(p2, NULL);
-    pthread_join(p3, NULL);
 
     gettimeofday(&stop, NULL);
     secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
