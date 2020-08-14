@@ -3,12 +3,12 @@
 #include <sys/time.h>
 
 #include "imageprocessing.h"
-#define N 5
 
-int main() {
+int main(int argc, char *argv[]) {
   imagem img, novaImg;
-  img = abrir_imagem("./data/cachorro.jpg");
-  novaImg = abrir_imagem("./data/cachorro.jpg");
+  int N = atoi(argv[1]);
+  img = abrir_imagem(argv[2]);
+  novaImg = abrir_imagem(argv[2]);
 
   float somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
@@ -86,7 +86,12 @@ int main() {
   secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
   printf("time taken linear: %f\n", secs);
 
-  salvar_imagem("cachorro-out-linear.jpg", &novaImg);
+  if (argc > 3){
+  	salvar_imagem(argv[3], &novaImg);
+  } else {
+  	salvar_imagem("./output.jpg", &novaImg);
+  }
   liberar_imagem(&novaImg);
+  liberar_imagem(&img);
   return 0;
 }
