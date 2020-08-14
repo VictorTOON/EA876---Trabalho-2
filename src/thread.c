@@ -13,7 +13,7 @@ void *funcao_thread1(void *count);
 imagem img;
 
 int main(){
-    img = abrir_imagem("./data/cachorro.jpg");
+    img = abrir_imagem("./data/onepiece.jpg");
     unsigned int somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
     float alpha = 0.998;

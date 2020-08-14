@@ -17,7 +17,7 @@ int main(){
 
     /* Criar area de memoria compartilhada */
     imagem img;
-    img = abrir_imagem("./data/cachorro.jpg");
+    img = abrir_imagem("./data/onepiece.jpg");
     float *matriz1 = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
     float *matriz2 = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
     float *matriz3 = (float *)mmap(NULL, sizeof(float) * img.height * img.width, protection, visibility, 0, 0);
