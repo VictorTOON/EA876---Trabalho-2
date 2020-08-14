@@ -1,0 +1,61 @@
+sh run-test.sh 
+time taken linear: 2.415062
+time taken multi thread: 0.828259
+time taken multi process: 1.371989
+time taken linear: 2.394921
+time taken multi thread: 0.845497
+time taken multi process: 1.393582
+time taken linear: 2.437601
+time taken multi thread: 0.866307
+time taken multi process: 1.382063
+time taken linear: 2.369100
+time taken multi thread: 0.810428
+time taken multi process: 1.367434
+time taken linear: 2.365641
+time taken multi thread: 0.811979
+time taken multi process: 1.433035
+time taken linear: 2.382679
+time taken multi thread: 0.813604
+time taken multi process: 1.366289
+time taken linear: 2.364567
+time taken multi thread: 0.820830
+time taken multi process: 1.358394
+time taken linear: 2.360679
+time taken multi thread: 0.816320
+time taken multi process: 1.360398
+time taken linear: 2.376139
+time taken multi thread: 0.808748
+time taken multi process: 1.364232
+time taken linear: 2.370987
+time taken multi thread: 0.829427
+time taken multi process: 1.362175
+time taken linear: 2.377024
+time taken multi thread: 0.814396
+time taken multi process: 1.398244
+time taken linear: 2.367373
+time taken multi thread: 0.809500
+time taken multi process: 1.369197
+time taken linear: 2.405899
+time taken multi thread: 0.814455
+time taken multi process: 1.416385
+time taken linear: 2.377420
+time taken multi thread: 0.827913
+time taken multi process: 1.366530
+time taken linear: 2.367524
+time taken multi thread: 0.832537
+time taken multi process: 1.368220
+time taken linear: 2.373751
+time taken multi thread: 0.812149
+time taken multi process: 1.365228
+time taken linear: 2.392670
+time taken multi thread: 0.813142
+time taken multi process: 1.363266
+time taken linear: 2.366024
+time taken multi thread: 0.814422
+time taken multi process: 1.363215
+time taken linear: 2.377494
+time taken multi thread: 0.848480
+time taken multi process: 1.369744
+time taken linear: 2.365139
+time taken multi thread: 0.810847
+time taken multi process: 1.364165
