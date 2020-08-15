@@ -11,6 +11,24 @@ build/thread.o: src/thread.c
 build/process.o: src/thread.c
 	gcc -o build/process.o src/process.c src/imageprocessing.c -I./ $(PROCESS_FLAGS)
 
+all-2p: build/linear-2p.o build/thread-2p.o build/process-2p.o
+
+build/linear-2p.o: src/linear-2p.c
+	gcc -o build/linear-2p.o src/linear-2p.c src/imageprocessing.c -I./ $(LINEAR_FLAGS)
+build/thread-2p.o: src/thread-2p.c
+	gcc -o build/thread-2p.o src/thread-2p.c src/imageprocessing.c -I./ $(THREAD_FLAGS)
+build/process-2p.o: src/thread-2p.c
+	gcc -o build/process-2p.o src/process-2p.c src/imageprocessing.c -I./ $(PROCESS_FLAGS)
+
+all-1p: build/linear-1p.o build/thread-1p.o build/process-1p.o
+
+build/linear-1p.o: src/linear-1p.c
+	gcc -o build/linear-1p.o src/linear-1p.c src/imageprocessing.c -I./ $(LINEAR_FLAGS)
+build/thread-1p.o: src/thread-1p.c
+	gcc -o build/thread-1p.o src/thread-1p.c src/imageprocessing.c -I./ $(THREAD_FLAGS)
+build/process-1p.o: src/thread-1p.c
+	gcc -o build/process-1p.o src/process-1p.c src/imageprocessing.c -I./ $(PROCESS_FLAGS)
+
 install:
 	mkdir build
 
@@ -18,3 +36,7 @@ clean:
 	rm build/*
 test:
 	sh run-test.sh 
+test-1p:
+	sh run-test.sh -1p
+test-2p:
+	sh run-test.sh -2p

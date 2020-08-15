@@ -8,7 +8,7 @@
 
 #include "imageprocessing.h"
 
-void *funcao_thread1(void *count);
+void *funcao_thread(void *count);
 imagem img;
 static int N;
 int main(int argc, char *argv[]){
@@ -23,13 +23,18 @@ int main(int argc, char *argv[]){
     //Daqui em diante é a forma multithread
     gettimeofday(&start, NULL);
     pthread_t p1;
+    pthread_t p2;
 
     void *arg1 = malloc(sizeof(float *));
+    void *arg2 = malloc(sizeof(float *));
     (arg1) = img.r;
+    (arg2) = img.g;
 
-    pthread_create(&(p1), NULL, funcao_thread1, arg1);
+    pthread_create(&(p1), NULL, funcao_thread, arg1);
+    pthread_create(&(p2), NULL, funcao_thread, arg2);
 
     pthread_join(p1, NULL);
+    pthread_join(p2, NULL);
 
     gettimeofday(&stop, NULL);
     secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
@@ -44,7 +49,7 @@ int main(int argc, char *argv[]){
     return 0;
 }
 
-void *funcao_thread1(void *arg){
+void *funcao_thread(void *arg){
     float* matriz = malloc(sizeof(float)*img.height*img.width);
     memcpy(matriz, arg, (sizeof(float) * img.height * img.width));
     float soma = 0, quant = 0;
