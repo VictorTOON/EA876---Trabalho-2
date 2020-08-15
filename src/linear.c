@@ -7,8 +7,11 @@
 
 int main() {
   imagem img, novaImg;
-  img = abrir_imagem("./data/onepiece.jpg");
-  novaImg = abrir_imagem("./data/onepiece.jpg");
+  //le o valor de N do makefile
+  int N = atoi(argv[1]);
+
+  img = abrir_imagem(argv[2]);
+  novaImg = abrir_imagem(argv[2]);
 
   float somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
