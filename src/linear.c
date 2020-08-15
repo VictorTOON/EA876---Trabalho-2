@@ -3,12 +3,12 @@
 #include <sys/time.h>
 
 #include "imageprocessing.h"
+#define N 5
 
-int main(int argc, char *argv[]) {
+int main() {
   imagem img, novaImg;
-  int N = atoi(argv[1]);
-  img = abrir_imagem(argv[2]);
-  novaImg = abrir_imagem(argv[2]);
+  img = abrir_imagem("./data/onepiece.jpg");
+  novaImg = abrir_imagem("./data/onepiece.jpg");
 
   float somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
@@ -38,16 +38,55 @@ int main(int argc, char *argv[]) {
 
     }
   }
+  for (int i=0; i<(img.width); i++) {
+    for (int j=0; j<(img.height); j++) {
+        //Blur normal no canal R
+        for(int l = j - N; l < j + N; l++){
+            if(l>=0 && l < img.height){
+                for (int k = i - N; k < i + N; k++){
+                    if (k >= 0 && k < img.width){
+                        somaG = somaG + img.g[l * img.width + k];
+                        quant++;
+                    }
+                }
+            }
+        }
+        novaImg.g[j * img.width + i] = somaG / quant;
+
+        somaR = 0;
+        somaG = 0;
+        somaB = 0;
+        quant = 0;
+
+    }
+  }
+  for (int i=0; i<(img.width); i++) {
+    for (int j=0; j<(img.height); j++) {
+        //Blur normal no canal R
+        for(int l = j - N; l < j + N; l++){
+            if(l>=0 && l < img.height){
+                for (int k = i - N; k < i + N; k++){
+                    if (k >= 0 && k < img.width){
+                        somaB = somaB + img.b[l * img.width + k];
+                        quant++;
+                    }
+                }
+            }
+        }
+        novaImg.b[j * img.width + i] = somaB / quant;
+
+        somaR = 0;
+        somaG = 0;
+        somaB = 0;
+        quant = 0;
+
+    }
+  }
   gettimeofday(&stop, NULL);
   secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
   printf("time taken linear: %f\n", secs);
 
-  if (argc > 3){
-  	salvar_imagem(argv[3], &novaImg);
-  } else {
-  	salvar_imagem("./output.jpg", &novaImg);
-  }
+  salvar_imagem("cachorro-out-linear.jpg", &novaImg);
   liberar_imagem(&novaImg);
-  liberar_imagem(&img);
   return 0;
 }

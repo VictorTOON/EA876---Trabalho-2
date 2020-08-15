@@ -7,13 +7,13 @@
 #include <string.h>
 
 #include "imageprocessing.h"
+#define N 5
 
 void *funcao_thread1(void *count);
 imagem img;
-static int N;
-int main(int argc, char *argv[]){
-    N = atoi(argv[1]);
-    img = abrir_imagem(argv[2]);
+
+int main(){
+    img = abrir_imagem("./data/onepiece.jpg");
     unsigned int somaR = 0, somaG = 0, somaB = 0, quant = 0;
 
     float alpha = 0.998;
@@ -22,24 +22,28 @@ int main(int argc, char *argv[]){
 
     //Daqui em diante é a forma multithread
     gettimeofday(&start, NULL);
-    pthread_t p1;
+    pthread_t p1, p2, p3;
 
     void *arg1 = malloc(sizeof(float *));
+    void *arg2 = malloc(sizeof(float *));
+    void *arg3 = malloc(sizeof(float *));
     (arg1) = img.r;
+    (arg2) = img.g;
+    (arg3) = img.b;
 
     pthread_create(&(p1), NULL, funcao_thread1, arg1);
+    pthread_create(&(p2), NULL, funcao_thread1, arg2);
+    pthread_create(&(p3), NULL, funcao_thread1, arg3);
 
     pthread_join(p1, NULL);
+    pthread_join(p2, NULL);
+    pthread_join(p3, NULL);
 
     gettimeofday(&stop, NULL);
     secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
     printf("time taken multi thread: %f\n", secs);
 
-    if (argc > 3){
-	salvar_imagem(argv[3], &img);
-    } else {
-	salvar_imagem("./output-thread.jpg", &img);
-    }
+    salvar_imagem("cachorro-out-multi-thread.jpg", &img);
     liberar_imagem(&img);
     return 0;
 }
