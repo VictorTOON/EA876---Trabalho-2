@@ -1,5 +1,5 @@
 
 for i in {1..100}; 
-	do (./build/linear$1.o 3 ./data/cachorro.jpg ; ./build/thread$1.o 3 ./data/cachorro.jpg; ./build/process$1.o 3 ./data/cachorro.jpg) | grep taken ; 
+	do (./build/linear$3.o $1 $2 ; ./build/thread$3.o $1 $2; ./build/process$3.o $1 $2) | grep taken ; 
 done;
 

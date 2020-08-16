@@ -1,6 +1,8 @@
 LINEAR_FLAGS=-lfreeimage -Wextra
 THREAD_FLAGS=-lfreeimage -lpthread -Wextra
 PROCESS_FLAGS=-lfreeimage -Wextra
+N=5
+IMAGE=./data/cachorro.jpg
 
 all: build/linear.o build/thread.o build/process.o
 
@@ -35,8 +37,8 @@ install:
 clean:
 	rm build/*
 test:
-	sh run-test.sh 
+	sh run-test.sh $(N) $(IMAGE)
 test-1p:
-	sh run-test.sh -1p
+	sh run-test.sh $(N) $(IMAGE) -1p
 test-2p:
-	sh run-test.sh -2p
+	sh run-test.sh $(N) $(IMAGE) -2p

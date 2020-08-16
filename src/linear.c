@@ -98,7 +98,7 @@ int main(int argc, char *argv[]){
     printf("time taken linear: %f\n", secs);
 
     if (argc > 2){
-        salvar_imagem("cachorro-out-linear.jpg", &img);
+        salvar_imagem("ouput-linear.jpg", &img);
     }
     else{
         salvar_imagem(argv[2], &img);

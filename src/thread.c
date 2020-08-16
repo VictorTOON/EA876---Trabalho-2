@@ -18,7 +18,6 @@ int main(int argc, char *argv[]){
     img = abrir_imagem(argv[2]);
     unsigned int somaR = 0, somaG = 0, somaB = 0, quant = 0;
     
-    float alpha = 0.998;
     struct timeval start, stop;
     double secs = 0;
     //pegando o tempo
@@ -48,7 +47,7 @@ int main(int argc, char *argv[]){
     printf("time taken multi thread: %f\n", secs);
 
     if (argc > 2){
-        salvar_imagem("cachorro-out-multi-thread.jpg", &img);
+        salvar_imagem("output-multi-thread.jpg", &img);
     }
     else{
         salvar_imagem(argv[2], &img);
@@ -66,7 +65,6 @@ void *funcao_thread1(void *arg){
     //a funcao é a mesma, as threads sao separadas pelasc camadas de cor, uma pra cada
     for (int i = 0; i < (img.width); i++){
         for (int j = 0; j < (img.height); j++){
-            //Blur normal no canal R
             for (int l = j - N; l < j + N; l++){
                 if (l >= 0 && l < img.height){
                     for (int k = i - N; k < i + N; k++){

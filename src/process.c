@@ -89,6 +89,7 @@ int main(int argc, char *argv[]){
 
 void processaMatriz(float* baseMatrix , float *matriz, int width, int height){
 	//a funcao é basicamente a mesma pra todos, sempre fazendo pra um canal de cor cada
+	// o valor retornado vai ficar no vetor matriz e vai se basear nos valores de baseMatrix
 	int soma = 0, quant = 0;
 	for (int i = 0; i < (width); i++){
 	    for (int j = 0; j < (height); j++){
