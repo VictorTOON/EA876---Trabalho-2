@@ -20,4 +20,4 @@ Com isso em mente, resolvemos ir atrás dos possíveis motivos disso estar acont
 
 [inserir os gráficos de 1P e 2P]
 
-Como pudemos observar, o tempo de execução se mantém se mudarmos o números de processos/threads feitos ao mesmo tempo. Com isso em mente, e fazendo algumas pesquisas, supomos que o que fez nosso multi-processo demorar tanto a mais é que os processos normalmente demoram mais para serem criados e para finalizarem. Além de que o tempo de "context switch" do Processo ser maior do que da Thread.
+Como pudemos observar, o tempo de execução se mantém se mudarmos o números de processos/threads feitos ao mesmo tempo. Com isso em mente, e fazendo algumas pesquisas, supomos que o que fez nosso multi-processo demorar tanto a mais é que os processos normalmente demoram mais para serem criados e para finalizarem. Além de que o tempo de "context switch" do Processo ser maior do que da Thread. Nos processos também, utilizamos mmap pra declarar as matrizes utilizadas dentro deles, e o mmap demora mais tempo para ser criado do que um malloc normal.
