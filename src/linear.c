@@ -30,7 +30,6 @@ int main(int argc, char *argv[]){
     gettimeofday(&start, NULL);
     for (int i = 0; i < (img.width); i++){
         for (int j = 0; j < (img.height); j++){
-            //Blur normal no canal R
             for (int l = j - N; l < j + N; l++){
                 if (l >= 0 && l < img.height){
                     for (int k = i - N; k < i + N; k++){
@@ -50,7 +49,6 @@ int main(int argc, char *argv[]){
     //canal verde
     for (int i = 0; i < (img.width); i++){
         for (int j = 0; j < (img.height); j++){
-            //Blur normal no canal R
             for (int l = j - N; l < j + N; l++){
                 if (l >= 0 && l < img.height){
                     for (int k = i - N; k < i + N; k++){
@@ -72,7 +70,6 @@ int main(int argc, char *argv[]){
     //canal azul
     for (int i = 0; i < (img.width); i++){
         for (int j = 0; j < (img.height); j++){
-            //Blur normal no canal R
             for (int l = j - N; l < j + N; l++){
                 if (l >= 0 && l < img.height){
                     for (int k = i - N; k < i + N; k++){
@@ -97,12 +94,13 @@ int main(int argc, char *argv[]){
     secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
     printf("time taken linear: %f\n", secs);
 
-    if (argc > 2){
-        salvar_imagem("ouput-linear.jpg", &img);
+    if (argc > 3){
+        salvar_imagem(argv[3], &novaImg);
     }
     else{
-        salvar_imagem(argv[2], &img);
+        salvar_imagem("ouput-linear.jpg", &novaImg);
     }
     liberar_imagem(&novaImg);
+    liberar_imagem(&img);
     return 0;
 }

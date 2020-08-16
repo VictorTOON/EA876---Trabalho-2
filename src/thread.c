@@ -9,7 +9,7 @@
 #include "imageprocessing.h"
 
 void *funcao_thread1(void *count);
-imagem img;
+static imagem img;
 static int N;
 
 int main(int argc, char *argv[]){
@@ -46,11 +46,11 @@ int main(int argc, char *argv[]){
     secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
     printf("time taken multi thread: %f\n", secs);
 
-    if (argc > 2){
-        salvar_imagem("output-multi-thread.jpg", &img);
+    if (argc > 3){
+        salvar_imagem(argv[3], &img);
     }
     else{
-        salvar_imagem(argv[2], &img);
+        salvar_imagem("output-multi-thread.jpg", &img);
     }
     liberar_imagem(&img);
     return 0;
