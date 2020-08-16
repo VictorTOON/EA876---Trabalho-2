@@ -7,15 +7,15 @@
 #include <string.h>
 
 #include "imageprocessing.h"
-#define N 5
 
 void *funcao_thread1(void *count);
 imagem img;
-
-int main(){
-    img = abrir_imagem("./data/onepiece.jpg");
+static int N;
+int main(int argc, char *argv[]){
+    N = atoi(argv[1]);
+    img = abrir_imagem(argv[2]);
     unsigned int somaR = 0, somaG = 0, somaB = 0, quant = 0;
-
+    
     float alpha = 0.998;
     struct timeval start, stop;
     double secs = 0;
@@ -43,7 +43,12 @@ int main(){
     secs = (double)(stop.tv_usec - start.tv_usec) / 1000000 + (double)(stop.tv_sec - start.tv_sec);
     printf("time taken multi thread: %f\n", secs);
 
-    salvar_imagem("cachorro-out-multi-thread.jpg", &img);
+    if (argc > 2){
+        salvar_imagem("cachorro-out-multi-thread.jpg", &img);
+    }
+    else{
+        salvar_imagem(argv[2], &img);
+    }
     liberar_imagem(&img);
     return 0;
 }
