@@ -6,6 +6,10 @@
 ## Lógica Utilizada
 Primeiramente, a ideia que tivemos foi de utilizar os processos/threads pra resolver cada um dos canais de cor separadamente, assim não temos problemas de conflito entre atividades paralelas. Nós interpretamos o vetor de cada canal como uma matriz de tamanho `[Altura da Imagem em Pixels]x[Largura da Imagem em Pixels]`. Mais sobre a implementação pode ser vista nos comentários dos arquivos principais: `linear.c`, `process.c` e `thread.c`, localizados no diretório `src`.
 
+## Estrutura dos arquivos de log
+
+Todos os logs de texto utilizados estão em `logs/` no formato `[Nome da Imagem]-[N]-[Número de Canais de Cor].txt`, os plots criados a partir desses esperimentos estão em `doc/` (esse diretório)  no formato `[Nome da Imagem]-[N]-[Número de Canais de Cor].txt`. 
+
 ## Instruções para a execução dos testes descritos
 
 ### Comandos:
