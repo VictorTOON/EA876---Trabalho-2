@@ -11,30 +11,35 @@ Primeiramente, a ideia que tivemos foi de utilizar os processos/threads pra reso
 ### Setup Utilizado
 Todos os testes foram conduzidos usando o seguinte setup:
 
-![alt text](https://github.com/VictorTOON/EA876---Trabalho-2/raw/master/doc/imgs/processador-bolets.png)
+![Setup Utilizado](https://github.com/VictorTOON/EA876---Trabalho-2/raw/master/doc/imgs/processador-bolets.png)
 
 Embora estejamos usando o OSX, comparamos os resultados que obtivemos com testes mais rápidos feitos em outras máquinas com Linux e não vimos uma diferença entre o resultados delas e os que iremos apresentar.
 
 ### Testes Iniciais 
 
-Como pedido, em cada teste executamos cada variação 100 vezes, decidimos considerar no nosso teste incial o N = 5 e a imagem sendo a encontrada em ./data/cachorro.jpg:
+Como pedido, em cada teste executamos cada variação 100 vezes, decidimos considerar no nosso teste incial o N = 5 e a imagem sendo a encontrada em `./data/cachorro.jpg (1920x1080)`:
 
-![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-3-1.png)
-![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-3-2.png)
+![Cachorro.jpg N=5](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-3-1.png)
+![Cachorro.jpg N=5](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-3-2.png)
 
 
 O resultado encontrado não foi exatamente o esperado, visto que já que tanto a variação de multiprocessamento quando a de multithread fazem os três canais paralelamente, mas a variação que utiliza o multiprocessamento foi consideravelmente mais lenta que a de multithread. Alternamos então o N para ver se era um caso isolado:
 
-#### N = 3
+#### N = 3:
 ![Cachorro.jpg N=3](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-3-3-1.png)
 ![Cachorro.jpg N=3](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-3-3-2.png)
 
-#### N = 5
+#### N = 7:
 ![Cachorro.jpg N=7](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-7-3-1.png)
 ![Cachorro.jpg N=7](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-7-3-2.png)
 
-Mas os resultados também foram semelhantes. Por fim, resolvemos testar com uma imagem muito grande (resolução 4k), e obtivemos o seguinte resultado:
+Mas os resultados também foram semelhantes. Utilizamos também imagens de resoluções diferentes: 
 
+#### `'./data/soundfood.jpeg' (300x300)`:
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/soundfood-5-3-1.png)
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/soundfood-5-3-2.png)
+
+#### `'./data/onePiece.png' (3840x2160)`:
 ![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/onePiece-5-3-1.png)
 ![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/onePiece-5-3-2.png)
 
