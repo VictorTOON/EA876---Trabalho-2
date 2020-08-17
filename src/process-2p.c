@@ -10,6 +10,7 @@
 
 #include "imageprocessing.h"
 
+//o codigo é o mesmo do process normal, mas com 2 canais de cor, ao invés de 3
 static float *matriz1;
 static float *matriz2;
 static float *matriz3;

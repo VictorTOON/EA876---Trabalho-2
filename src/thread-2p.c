@@ -8,6 +8,8 @@
 
 #include "imageprocessing.h"
 
+//mesmo código da thread normal, mas com apenas 2 canais de cor e 2 threads rolando
+
 void *funcao_thread(void *count);
 imagem img;
 static int N;
