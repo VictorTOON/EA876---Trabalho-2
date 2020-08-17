@@ -3,7 +3,8 @@ THREAD_FLAGS=-lfreeimage -lpthread -Wextra
 PROCESS_FLAGS=-lfreeimage -Wextra
 N=5
 IMAGE=./data/cachorro.jpg
-N_ITERATIONS=100
+N_ITERATIONS=3 ### MUDAR #### 
+UNAME_S := $(shell uname -s)
 
 all: build/linear.o build/thread.o build/process.o
 
@@ -39,22 +40,22 @@ clean:
 	rm build/*
 test:
 ifeq ($(UNAME_S),Linux)
-	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE)
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) | python3 plot-graph.py
 endif
 ifeq ($(UNAME_S),Darwin)
-	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE)
+	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) | python3 plot-graph.py
 endif
 test-1p:
 ifeq ($(UNAME_S),Linux)
-	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p | python3 plot-graph.py
 endif
 ifeq ($(UNAME_S),Darwin)
-	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p
+	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p | python3 plot-graph.py
 endif
-test-2p:
+test-2p | plot_graph.py:
 ifeq ($(UNAME_S),Linux)
-	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p | python3 plot-graph.py
 endif
 ifeq ($(UNAME_S),Darwin)
-	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p
+	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p | python3 plot-graph.py
 endif
