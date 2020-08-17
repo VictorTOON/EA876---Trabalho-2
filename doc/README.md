@@ -6,6 +6,36 @@
 ## Lógica Utilizada
 Primeiramente, a ideia que tivemos foi de utilizar os processos/threads pra resolver cada um dos canais de cor separadamente, assim não temos problemas de conflito entre atividades paralelas. Nós interpretamos o vetor de cada canal como uma matriz de tamanho `[Altura da Imagem em Pixels]x[Largura da Imagem em Pixels]`. Mais sobre a implementação pode ser vista nos comentários dos arquivos principais: `linear.c`, `process.c` e `thread.c`, localizados no diretório `src`.
 
+## Instruções para a execução dos testes descritos
+
+### Comandos:
+* make/make all: compila os arquivos de teste com as flags corretas e a imagem selecionada
+* make test: roda os testes dos 3 arquivos, e chama a função em python para fazer os gráficos
+* make clean: Limpa os arquivos criados na compilação e o executável gerado
+
+### Executando:
+* Para executar os testes, primeiro use o comando `make` para compilar e buildas os arquivos e depois o `make test` para executar os testes. Os logs dos arquivos serão salvos na pasta logs. No arquivo Makefille, é possível mudar o valor de N do blur e a imagem a ser utilizada.
+
+### Executando testes individuais:
+* Para a execução de testes individuais, deve ser feito o seguinte:</br>
+`Arquivo-Binário [N] [Caminho para a Imagem de Entrada] [(opcional) Caminho para a Imagem de Saída]`
+* Por exemplo:
+`./build/linear.o 5 ./data/cachorro.jpg ./saida.jpg`</br>
+Nesse caso, buildamos somente o teste linear, com N = 5, com a imagem do cachorro e a saída será saida.jpg (a saída é opcional)
+
+### Casos específicos
+* Temos o arquivo run-tests.sh também, que serve caso vc queira executar um teste específico várias vezes, que funciona da segunda forma:
+`./run-test.sh [Número de Iterações Para cada Variação [N] [Imagem de Entrada] [Tipo de Uso]`
+* Por exemplo:</br>
+Exemplo para um canal de cor: `./run-test.sh 50 5 ./data/cachorro.jpg -1p`</br>
+Exemplo para três canais: `./run-test.sh 50 5 ./data/cachorro.jpg`
+* Tipo de uso:
+São 3 tipos de uso disponíveis:</br>
+&#8594; 1 canal: `-1p`;</br>
+&#8594; 2 canais: `-2p`;</br>
+&#8594; 3 canais: Vazio;
+
+
 ## Testes 
 
 ### Setup Utilizado
@@ -58,8 +88,5 @@ Vimos então que provavelmente não era uma questão de quais são as entradas (
 ![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/process.png)
 
 Como pudemos observar, o tempo de execução não está mudando de forma significativa se mudarmos o números de processos/threads feitos ao mesmo tempo. Com isso em mente, vemos que o _context switch_ não é o maior influenciador dessa alta diferença de tempo. Uma das susposicões que tivemos após pesquisas que fizemos sobre o desempenho dos processos relacionado ao desempenho das threads é que da forma que o código foi estruturado o tempo de criação e finalização dos processos está significativamente maior do que o das threads. 
-
-## Instruções para a execução dos testes descritos
-
 
 
