@@ -2,11 +2,12 @@ Primeiramente, a ideia que tivemos foi de utilizar os processos/threads pra reso
 
 Primeiramente, todos os nossos gráficos e testes foram feitos com o seguinte setup:
 
-[colocar a imagem do processador]
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/processador_bolets.png)
 
 Nisso, nós obtivemos os seguintes testes para N = 5:
 
-[Coloca a imagem saidaN5]
+![alt text]()(https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/saida-100-N5-3p-cachorro-1.png)
+![alt text]()(https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/saida-100-N5-3p-cachorro-2.png)
 
 Com isso, podemos ver que o resultado não foi exatamente como o esperado, já que o multi-processos está consideravelmente distante da multi-thread. Então, testamos para N = 3 e N = 7:
 

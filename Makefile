@@ -40,24 +40,24 @@ clean:
 test:
 	chmod +x run-test.sh
 ifeq ($(UNAME_S),Linux)
-	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) #| python3 plot-graph.py
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) | python3 plot-graph.py
 endif
 ifeq ($(UNAME_S),Darwin)
-	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) #| python3 plot-graph.py
+	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) | python3 plot-graph.py
 endif
 test-1p:
 	chmod +x run-test.sh
 ifeq ($(UNAME_S),Linux)
-	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p #| python3 plot-graph.py
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p | python3 plot-graph.py
 endif
 ifeq ($(UNAME_S),Darwin)
-	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p #| python3 plot-graph.py
+	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p | python3 plot-graph.py
 endif
 test-2p:
 	chmod +x run-test.sh
 ifeq ($(UNAME_S),Linux)
-	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p #| python3 plot-graph.py
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p | python3 plot-graph.py
 endif
 ifeq ($(UNAME_S),Darwin)
-	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p #| python3 plot-graph.py
+	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p | python3 plot-graph.py
 endif
