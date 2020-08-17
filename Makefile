@@ -7,7 +7,7 @@ N=5
 # Imagem usada como entrada
 IMAGE=./data/cachorro.jpg
 # Número de vezes que rodamos cada variação no teste
-N_ITERATIONS=100o
+N_ITERATIONS=100
 # Variável utilizada para descobrir o sistema operacional utilizado (OSX ou LINUX)
 UNAME_S := $(shell uname -s)
 
