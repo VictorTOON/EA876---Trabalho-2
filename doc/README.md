@@ -17,22 +17,22 @@ Primeiramente, a ideia que tivemos foi de utilizar os processos/threads pra reso
 * Para executar os testes, primeiro use o comando `make` para compilar e buildas os arquivos e depois o `make test` para executar os testes. Os logs dos arquivos serão salvos na pasta logs. No arquivo Makefille, é possível mudar o valor de N do blur e a imagem a ser utilizada.
 
 ### Executando testes individuais:
-* Para a execução de testes individuais, deve ser feito o seguinte:
+* Para a execução de testes individuais, deve ser feito o seguinte:</br>
 `Arquivo-Binário [N] [Caminho para a Imagem de Entrada] [(opcional) Caminho para a Imagem de Saída]`
 * Por exemplo:
-`./build/linear.o 5 ./data/cachorro.jpg ./saida.jpg`
+`./build/linear.o 5 ./data/cachorro.jpg ./saida.jpg`</br>
 Nesse caso, buildamos somente o teste linear, com N = 5, com a imagem do cachorro e a saída será saida.jpg (a saída é opcional)
 
 ### Casos específicos
 * Temos o arquivo run-tests.sh também, que serve caso vc queira executar um teste específico várias vezes, que funciona da segunda forma:
 `./run-test.sh [Número de Iterações Para cada Variação [N] [Imagem de Entrada] [Tipo de Uso]`
-* Por exemplo: 
-Exemplo para um canal de cor: `./run-test.sh 50 5 ./data/cachorro.jpg -1p`
+* Por exemplo:</br>
+Exemplo para um canal de cor: `./run-test.sh 50 5 ./data/cachorro.jpg -1p`</br>
 Exemplo para três canais: `./run-test.sh 50 5 ./data/cachorro.jpg`
 * Tipo de uso:
-São 3 tipos de uso disponíveis:
-&#8594; 1 canal: `-1p`;
-&#8594; 2 canais: `-2p`;
+São 3 tipos de uso disponíveis:</br>
+&#8594; 1 canal: `-1p`;</br>
+&#8594; 2 canais: `-2p`;</br>
 &#8594; 3 canais: Vazio;
 
 
