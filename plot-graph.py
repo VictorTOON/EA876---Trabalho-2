@@ -29,7 +29,7 @@ linear_avg,linear_std  = linear.mean(), linear.std()
 thread_avg,thread_std  = thread.mean(), thread.std()
 process_avg,process_std  = process.mean(), process.std()
 
-pdf = matplotlib.backends.backend_pdf.PdfPages(f"output.pdf")
+pdf = matplotlib.backends.backend_pdf.PdfPages("output.pdf")
 
 fig = plt.figure()
 
