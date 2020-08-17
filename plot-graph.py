@@ -4,6 +4,7 @@ import numpy as np
 import re
 from sys import argv
 import matplotlib.backends.backend_pdf
+from datetime import datetime
 if len(argv) > 1:
     with open(argv[1], 'r') as f:
         txt = f.read()
@@ -14,6 +15,10 @@ else:
             txt += input() + '\n'
         except EOFError:
             break
+
+    with open("logs/output-"+str(datetime.now()).replace(" ","-")+".txt", "w") as f:
+        f.write(txt) 
+
 linear, thread, process = [], [], []
 for line in txt.split('\n'):
     if 'thread' in line:
