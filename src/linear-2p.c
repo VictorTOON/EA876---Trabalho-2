@@ -4,6 +4,7 @@
 
 #include "imageprocessing.h"
 
+//o mesmo código do linear normal, mas com 2 canais de cor
 int main(int argc, char *argv[]) {
   imagem img, novaImg;
   int N = atoi(argv[1]);

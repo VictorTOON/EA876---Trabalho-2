@@ -4,6 +4,7 @@
 
 #include "imageprocessing.h"
 
+//o código é o mesmo dos linear, só que com apenas 1 canal de cor
 int main(int argc, char *argv[]) {
   imagem img, novaImg;
   int N = atoi(argv[1]);
