@@ -37,8 +37,10 @@ plt.hist(linear,label='linear')
 plt.hist(thread,label='thread')
 plt.hist(process,label='process')
 plt.legend()
-
+plt.xlabel("Tempo (em segundos)")
+plt.ylabel("Frequência por execução")
 pdf.savefig(fig,bbox_inches = 'tight') 
+# plt.savefig(input(),bbox_inches='tight') 
 
 fig, (ax1, ax2) = plt.subplots(2) 
 ax1.set_ylabel("Tempo (em segundos) ")
@@ -68,5 +70,6 @@ ax2.axis("off")
 
 
 pdf.savefig(fig,bbox_inches = 'tight') 
+# plt.savefig(input(),bbox_inches='tight') 
 
 pdf.close()

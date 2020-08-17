@@ -6,19 +6,28 @@ Primeiramente, todos os nossos gráficos e testes foram feitos com o seguinte se
 
 Nisso, nós obtivemos os seguintes testes para N = 5:
 
-![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/saida-100-N5-3p-cachorro-1.png)
-![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/saida-100-N5-3p-cachorro-2.png)
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-3-1.png)
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-3-2.png)
 
 Com isso, podemos ver que o resultado não foi exatamente como o esperado, já que o multi-processos está consideravelmente distante da multi-thread. Então, testamos para N = 3 e N = 7:
 
-[imagem N3 e imagem N7]
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-3-3-1.png)
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-3-3-2.png)
+
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-7-3-1.png)
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-7-3-2.png)
 
 Mas os resultados também foram semelhantes. Por fim, resolvemos testar com uma imagem muito grande (resolução 4k), e obtivemos o seguinte resultado:
 
-[saidaOnePiece]
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/onePiece-5-3-1.png)
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/onePiece-5-3-2.png)
 
 Com isso em mente, resolvemos ir atrás dos possíveis motivos disso estar acontecendo, já que tanto o multi-thread quanto o multi-processos são feitas em paralelo. Então fizemos alguns testes com apenas 1 canal de cor e com 2 canais, pra saber se haveria diferença na velocidade(não deveria haver, teoricamente). Obtivemos os seguintes resultados:
 
-[inserir os gráficos de 1P e 2P]
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-1-1.png)
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-1-2.png)
+
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-2-1.png)
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-2-2.png)
 
 Como pudemos observar, o tempo de execução se mantém se mudarmos o números de processos/threads feitos ao mesmo tempo. Com isso em mente, e fazendo algumas pesquisas, supomos que o que fez nosso multi-processo demorar tanto a mais é que os processos normalmente demoram mais para serem criados e para finalizarem. Além de que o tempo de "context switch" do Processo ser maior do que da Thread. Nos processos também, utilizamos mmap pra declarar as matrizes utilizadas dentro deles, e o mmap demora mais tempo para ser criado do que um malloc normal.
