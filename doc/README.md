@@ -53,6 +53,10 @@ Vimos então que provavelmente não era uma questão de quais são as entradas (
 ![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-2-1.png)
 ![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/cachorro-5-2-2.png)
 
+#### Fazendo a comparação entre o tempo médio do processamento de 1, 2 e 3 canais e considerando mostrando os erros em linhas verticais (considerando `erro =  √(desvio padrão do tempo)`) temos:
+
+![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/process-1-2-3.png)
+
 Como pudemos observar, o tempo de execução se mantém se mudarmos o números de processos/threads feitos ao mesmo tempo. Com isso em mente, e fazendo algumas pesquisas, supomos que o que fez nosso multi-processo demorar tanto a mais é que os processos normalmente demoram mais para serem criados e para finalizarem. Além de que o tempo de "context switch" do Processo ser maior do que da Thread.
 
 ## Instruções para a execução dos testes descritos
