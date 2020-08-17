@@ -1,9 +1,14 @@
+# Flags Utilizadas 
 LINEAR_FLAGS=-lfreeimage -Wextra
 THREAD_FLAGS=-lfreeimage -lpthread -Wextra
 PROCESS_FLAGS=-lfreeimage -Wextra
+# N Utilizado nos testes
 N=5
-IMAGE=./data/soundfood.jpeg
-N_ITERATIONS=100
+# Imagem usada como entrada
+IMAGE=./data/cachorro.jpg
+# Número de vezes que rodamos cada variação no teste
+N_ITERATIONS=100o
+# Variável uti
 UNAME_S := $(shell uname -s)
 
 all: install build/linear.o build/thread.o build/process.o all-1p all-2p

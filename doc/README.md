@@ -57,6 +57,9 @@ Vimos então que provavelmente não era uma questão de quais são as entradas (
 
 ![alt text](https://raw.githubusercontent.com/VictorTOON/EA876---Trabalho-2/master/doc/imgs/process.png)
 
-Como pudemos observar, o tempo de execução se mantém se mudarmos o números de processos/threads feitos ao mesmo tempo. Com isso em mente, e fazendo algumas pesquisas, supomos que o que fez nosso multi-processo demorar tanto a mais é que os processos normalmente demoram mais para serem criados e para finalizarem. Além de que o tempo de "context switch" do Processo ser maior do que da Thread.
+Como pudemos observar, o tempo de execução não está mudando de forma significativa se mudarmos o números de processos/threads feitos ao mesmo tempo. Com isso em mente, vemos que o _context switch_ não é o maior influenciador dessa alta diferença de tempo. Uma das susposicões que tivemos após pesquisas que fizemos sobre o desempenho dos processos relacionado ao desempenho das threads é que da forma que o código foi estruturado o tempo de criação e finalização dos processos está significativamente maior do que o das threads. 
 
 ## Instruções para a execução dos testes descritos
+
+
+
