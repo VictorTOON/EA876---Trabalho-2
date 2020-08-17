@@ -3,10 +3,10 @@ THREAD_FLAGS=-lfreeimage -lpthread -Wextra
 PROCESS_FLAGS=-lfreeimage -Wextra
 N=5
 IMAGE=./data/soundfood.png
-N_ITERATIONS=3 ### MUDAR #### 
+N_ITERATIONS=100
 UNAME_S := $(shell uname -s)
 
-all: build/linear.o build/thread.o build/process.o
+all: install build/linear.o build/thread.o build/process.o all-1p all-2p
 
 build/linear.o: src/linear.c
 	gcc -o build/linear.o src/linear.c src/imageprocessing.c -I./ $(LINEAR_FLAGS)
@@ -33,9 +33,8 @@ build/thread-1p.o: src/thread-1p.c
 build/process-1p.o: src/thread-1p.c
 	gcc -o build/process-1p.o src/process-1p.c src/imageprocessing.c -I./ $(PROCESS_FLAGS)
 
-install:
-	mkdir build
-
+install: 
+	if [ -d "build" ]; then echo "saving in build.."; else mkdir build; fi;
 clean:
 	rm build/*
 test:
