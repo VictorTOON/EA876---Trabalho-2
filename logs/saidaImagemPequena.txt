@@ -1,0 +1,302 @@
+chmod +x run-test.sh
+sh run-test.sh 100 5 ./data/soundfood.jpeg #| python3 plot-graph.py
+time taken linear: 0.098157
+time taken multi thread: 0.034091
+time taken multi process: 0.061185
+time taken linear: 0.090404
+time taken multi thread: 0.031537
+time taken multi process: 0.074182
+time taken linear: 0.090394
+time taken multi thread: 0.031789
+time taken multi process: 0.060476
+time taken linear: 0.117645
+time taken multi thread: 0.036506
+time taken multi process: 0.068226
+time taken linear: 0.098355
+time taken multi thread: 0.031965
+time taken multi process: 0.063261
+time taken linear: 0.094300
+time taken multi thread: 0.033871
+time taken multi process: 0.066996
+time taken linear: 0.091578
+time taken multi thread: 0.032483
+time taken multi process: 0.061790
+time taken linear: 0.091460
+time taken multi thread: 0.037666
+time taken multi process: 0.063580
+time taken linear: 0.103036
+time taken multi thread: 0.033451
+time taken multi process: 0.064600
+time taken linear: 0.090351
+time taken multi thread: 0.034166
+time taken multi process: 0.076893
+time taken linear: 0.094471
+time taken multi thread: 0.030519
+time taken multi process: 0.072485
+time taken linear: 0.092312
+time taken multi thread: 0.030664
+time taken multi process: 0.073548
+time taken linear: 0.091313
+time taken multi thread: 0.030543
+time taken multi process: 0.074468
+time taken linear: 0.092481
+time taken multi thread: 0.032136
+time taken multi process: 0.072477
+time taken linear: 0.093184
+time taken multi thread: 0.032347
+time taken multi process: 0.064128
+time taken linear: 0.089225
+time taken multi thread: 0.030742
+time taken multi process: 0.062907
+time taken linear: 0.093920
+time taken multi thread: 0.030089
+time taken multi process: 0.061169
+time taken linear: 0.089921
+time taken multi thread: 0.029840
+time taken multi process: 0.062318
+time taken linear: 0.091016
+time taken multi thread: 0.032264
+time taken multi process: 0.061696
+time taken linear: 0.090853
+time taken multi thread: 0.031336
+time taken multi process: 0.062213
+time taken linear: 0.093219
+time taken multi thread: 0.031190
+time taken multi process: 0.064379
+time taken linear: 0.093348
+time taken multi thread: 0.030791
+time taken multi process: 0.061574
+time taken linear: 0.090604
+time taken multi thread: 0.032953
+time taken multi process: 0.067477
+time taken linear: 0.090737
+time taken multi thread: 0.030699
+time taken multi process: 0.061591
+time taken linear: 0.091366
+time taken multi thread: 0.035617
+time taken multi process: 0.073464
+time taken linear: 0.091519
+time taken multi thread: 0.032794
+time taken multi process: 0.067802
+time taken linear: 0.093638
+time taken multi thread: 0.032147
+time taken multi process: 0.063706
+time taken linear: 0.090501
+time taken multi thread: 0.030522
+time taken multi process: 0.064229
+time taken linear: 0.091132
+time taken multi thread: 0.033020
+time taken multi process: 0.067317
+time taken linear: 0.089515
+time taken multi thread: 0.030625
+time taken multi process: 0.061941
+time taken linear: 0.090653
+time taken multi thread: 0.031516
+time taken multi process: 0.061980
+time taken linear: 0.088816
+time taken multi thread: 0.030323
+time taken multi process: 0.061217
+time taken linear: 0.091330
+time taken multi thread: 0.031578
+time taken multi process: 0.063038
+time taken linear: 0.090912
+time taken multi thread: 0.031444
+time taken multi process: 0.060936
+time taken linear: 0.089395
+time taken multi thread: 0.029797
+time taken multi process: 0.061525
+time taken linear: 0.090179
+time taken multi thread: 0.031792
+time taken multi process: 0.064176
+time taken linear: 0.091017
+time taken multi thread: 0.032772
+time taken multi process: 0.061567
+time taken linear: 0.093545
+time taken multi thread: 0.032027
+time taken multi process: 0.062416
+time taken linear: 0.090463
+time taken multi thread: 0.030540
+time taken multi process: 0.062346
+time taken linear: 0.092006
+time taken multi thread: 0.030868
+time taken multi process: 0.063241
+time taken linear: 0.091946
+time taken multi thread: 0.032539
+time taken multi process: 0.061264
+time taken linear: 0.091683
+time taken multi thread: 0.031778
+time taken multi process: 0.071148
+time taken linear: 0.090727
+time taken multi thread: 0.031190
+time taken multi process: 0.070455
+time taken linear: 0.091286
+time taken multi thread: 0.030864
+time taken multi process: 0.060311
+time taken linear: 0.087821
+time taken multi thread: 0.029206
+time taken multi process: 0.058997
+time taken linear: 0.087793
+time taken multi thread: 0.028907
+time taken multi process: 0.060485
+time taken linear: 0.088546
+time taken multi thread: 0.030042
+time taken multi process: 0.061494
+time taken linear: 0.088078
+time taken multi thread: 0.029487
+time taken multi process: 0.059601
+time taken linear: 0.087107
+time taken multi thread: 0.029561
+time taken multi process: 0.060150
+time taken linear: 0.087427
+time taken multi thread: 0.029922
+time taken multi process: 0.063222
+time taken linear: 0.089970
+time taken multi thread: 0.028924
+time taken multi process: 0.062546
+time taken linear: 0.089573
+time taken multi thread: 0.029734
+time taken multi process: 0.059945
+time taken linear: 0.089634
+time taken multi thread: 0.029867
+time taken multi process: 0.074508
+time taken linear: 0.089861
+time taken multi thread: 0.029218
+time taken multi process: 0.059622
+time taken linear: 0.087513
+time taken multi thread: 0.030491
+time taken multi process: 0.059783
+time taken linear: 0.087637
+time taken multi thread: 0.029876
+time taken multi process: 0.059226
+time taken linear: 0.089295
+time taken multi thread: 0.029149
+time taken multi process: 0.060205
+time taken linear: 0.088722
+time taken multi thread: 0.029517
+time taken multi process: 0.061036
+time taken linear: 0.086634
+time taken multi thread: 0.030353
+time taken multi process: 0.060123
+time taken linear: 0.090091
+time taken multi thread: 0.029200
+time taken multi process: 0.081010
+time taken linear: 0.088030
+time taken multi thread: 0.029191
+time taken multi process: 0.059020
+time taken linear: 0.089424
+time taken multi thread: 0.030796
+time taken multi process: 0.061705
+time taken linear: 0.086679
+time taken multi thread: 0.029861
+time taken multi process: 0.059471
+time taken linear: 0.088748
+time taken multi thread: 0.029676
+time taken multi process: 0.060207
+time taken linear: 0.087520
+time taken multi thread: 0.030604
+time taken multi process: 0.059153
+time taken linear: 0.086827
+time taken multi thread: 0.030373
+time taken multi process: 0.061825
+time taken linear: 0.088330
+time taken multi thread: 0.029401
+time taken multi process: 0.060093
+time taken linear: 0.088520
+time taken multi thread: 0.030178
+time taken multi process: 0.061505
+time taken linear: 0.093523
+time taken multi thread: 0.031666
+time taken multi process: 0.061451
+time taken linear: 0.099856
+time taken multi thread: 0.035290
+time taken multi process: 0.060575
+time taken linear: 0.088855
+time taken multi thread: 0.029619
+time taken multi process: 0.058852
+time taken linear: 0.087745
+time taken multi thread: 0.030788
+time taken multi process: 0.060732
+time taken linear: 0.088796
+time taken multi thread: 0.029766
+time taken multi process: 0.059464
+time taken linear: 0.088294
+time taken multi thread: 0.029548
+time taken multi process: 0.059748
+time taken linear: 0.089267
+time taken multi thread: 0.029200
+time taken multi process: 0.060380
+time taken linear: 0.087963
+time taken multi thread: 0.029017
+time taken multi process: 0.066970
+time taken linear: 0.090117
+time taken multi thread: 0.029825
+time taken multi process: 0.063261
+time taken linear: 0.086579
+time taken multi thread: 0.029618
+time taken multi process: 0.061126
+time taken linear: 0.087136
+time taken multi thread: 0.029667
+time taken multi process: 0.060402
+time taken linear: 0.087742
+time taken multi thread: 0.029507
+time taken multi process: 0.058992
+time taken linear: 0.088187
+time taken multi thread: 0.031877
+time taken multi process: 0.063851
+time taken linear: 0.091264
+time taken multi thread: 0.031956
+time taken multi process: 0.067231
+time taken linear: 0.091155
+time taken multi thread: 0.033461
+time taken multi process: 0.060247
+time taken linear: 0.100016
+time taken multi thread: 0.033765
+time taken multi process: 0.063230
+time taken linear: 0.090494
+time taken multi thread: 0.032647
+time taken multi process: 0.061829
+time taken linear: 0.091321
+time taken multi thread: 0.029384
+time taken multi process: 0.061365
+time taken linear: 0.089469
+time taken multi thread: 0.030123
+time taken multi process: 0.061302
+time taken linear: 0.090229
+time taken multi thread: 0.033803
+time taken multi process: 0.061098
+time taken linear: 0.091011
+time taken multi thread: 0.036129
+time taken multi process: 0.066716
+time taken linear: 0.091334
+time taken multi thread: 0.029466
+time taken multi process: 0.072283
+time taken linear: 0.088507
+time taken multi thread: 0.029031
+time taken multi process: 0.067054
+time taken linear: 0.093513
+time taken multi thread: 0.031443
+time taken multi process: 0.075836
+time taken linear: 0.088263
+time taken multi thread: 0.030252
+time taken multi process: 0.059073
+time taken linear: 0.087977
+time taken multi thread: 0.030557
+time taken multi process: 0.067446
+time taken linear: 0.087226
+time taken multi thread: 0.029538
+time taken multi process: 0.061598
+time taken linear: 0.088312
+time taken multi thread: 0.030038
+time taken multi process: 0.061699
+time taken linear: 0.088565
+time taken multi thread: 0.028897
+time taken multi process: 0.059793
+time taken linear: 0.087645
+time taken multi thread: 0.032746
+time taken multi process: 0.061422
+time taken linear: 0.087903
+time taken multi thread: 0.029395
+time taken multi process: 0.058956
+time taken linear: 0.087485
+time taken multi thread: 0.029121
+time taken multi process: 0.059630
