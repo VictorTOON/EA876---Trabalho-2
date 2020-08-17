@@ -38,8 +38,23 @@ install:
 clean:
 	rm build/*
 test:
+ifeq ($(UNAME_S),Linux)
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE)
+endif
+ifeq ($(UNAME_S),Darwin)
 	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE)
+endif
 test-1p:
+ifeq ($(UNAME_S),Linux)
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p
+endif
+ifeq ($(UNAME_S),Darwin)
 	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p
+endif
 test-2p:
+ifeq ($(UNAME_S),Linux)
+	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p
+endif
+ifeq ($(UNAME_S),Darwin)
 	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p
+endif
