@@ -2,7 +2,7 @@ LINEAR_FLAGS=-lfreeimage -Wextra
 THREAD_FLAGS=-lfreeimage -lpthread -Wextra
 PROCESS_FLAGS=-lfreeimage -Wextra
 N=5
-IMAGE=./data/cachorro.jpg
+IMAGE=./data/soundfood.png
 N_ITERATIONS=3 ### MUDAR #### 
 UNAME_S := $(shell uname -s)
 
@@ -39,6 +39,7 @@ install:
 clean:
 	rm build/*
 test:
+	chmod +x run-test.sh
 ifeq ($(UNAME_S),Linux)
 	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) | python3 plot-graph.py
 endif
@@ -46,13 +47,15 @@ ifeq ($(UNAME_S),Darwin)
 	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) | python3 plot-graph.py
 endif
 test-1p:
+	chmod +x run-test.sh
 ifeq ($(UNAME_S),Linux)
 	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p | python3 plot-graph.py
 endif
 ifeq ($(UNAME_S),Darwin)
 	sh run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -1p | python3 plot-graph.py
 endif
-test-2p | plot_graph.py:
+test-2p:
+	chmod +x run-test.sh
 ifeq ($(UNAME_S),Linux)
 	./run-test.sh $(N_ITERATIONS) $(N) $(IMAGE) -2p | python3 plot-graph.py
 endif

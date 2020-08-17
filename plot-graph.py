@@ -4,8 +4,16 @@ import numpy as np
 import re
 from sys import argv
 import matplotlib.backends.backend_pdf
-with open(argv[1], 'r') as f:
-    txt = f.read()
+if len(argv) > 1:
+    with open(argv[1], 'r') as f:
+        txt = f.read()
+else:
+    txt = ''
+    while True:
+        try:
+            txt += input() + '\n'
+        except EOFError:
+            break
 linear, thread, process = [], [], []
 for line in txt.split('\n'):
     if 'thread' in line:
