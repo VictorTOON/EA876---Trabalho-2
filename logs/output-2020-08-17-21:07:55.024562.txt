@@ -1,0 +1,30 @@
+time taken linear: 1.436029
+time taken multi thread: 0.751358
+time taken multi process: 1.673059
+time taken linear: 1.554136
+time taken multi thread: 1.004466
+time taken multi process: 2.519765
+time taken linear: 1.527907
+time taken multi thread: 0.874338
+time taken multi process: 1.721027
+time taken linear: 1.464998
+time taken multi thread: 0.881308
+time taken multi process: 1.743255
+time taken linear: 1.245986
+time taken multi thread: 0.790031
+time taken multi process: 2.098728
+time taken linear: 1.436000
+time taken multi thread: 1.064361
+time taken multi process: 1.938144
+time taken linear: 1.364356
+time taken multi thread: 0.905253
+time taken multi process: 2.246502
+time taken linear: 1.601412
+time taken multi thread: 1.801328
+time taken multi process: 2.186773
+time taken linear: 1.267216
+time taken multi thread: 0.722836
+time taken multi process: 1.675855
+time taken linear: 1.279365
+time taken multi thread: 0.804098
+time taken multi process: 1.777725
