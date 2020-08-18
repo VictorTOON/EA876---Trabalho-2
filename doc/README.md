@@ -8,7 +8,7 @@ Primeiramente, a ideia que tivemos foi de utilizar os processos/threads pra reso
 
 ## Estrutura dos arquivos de log
 
-Todos os logs de texto utilizados estão em `logs/` no formato `[Nome da Imagem]-[N]-[Número de Canais de Cor].txt`, os plots criados a partir desses esperimentos estão em `doc/` (esse diretório)  no formato `[Nome da Imagem]-[N]-[Número de Canais de Cor].txt`. 
+Todos os logs de texto utilizados estão em `logs/` no formato `[Nome da Imagem]-[N]-[Número de Canais de Cor].txt`, os plots criados a partir desses esperimentos estão em `doc/` (esse diretório)  no formato `[Nome da Imagem]-[N]-[Número de Canais de Cor].pdf`. 
 
 ## Instruções para a execução dos testes descritos
 
